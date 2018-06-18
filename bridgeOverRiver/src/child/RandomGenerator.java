@@ -13,9 +13,9 @@ public class RandomGenerator extends NamePrinter {
     }
 
     public void action() {
-        System.out.println("Executing behaviour " + getBehaviourName());
+        // System.out.println("Executing behaviour " + getBehaviourName());
         exitValue = (int) (Math.random() * maxExitValue);
-        System.out.println("Exit value is " + exitValue);
+        // System.out.println("Exit value is " + exitValue);
     }
 
     public int onEnd() {

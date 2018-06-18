@@ -15,11 +15,13 @@ public class ChildAgent extends Agent {
     private static final String WANNA_CROSS = "I wanna cross the bridge";
     private static final String CROSSING = "I'm crossing the bridge";
 
+    private String side = "Right";
+
     protected void setup() {
 
         FSMBehaviour fsm = new FSMBehaviour(this) {
             public int onEnd() {
-                System.out.println("Child behaviour completed.");
+                // System.out.println("Child behaviour completed.");
                 myAgent.doDelete();
                 return super.onEnd();
             }
@@ -32,7 +34,7 @@ public class ChildAgent extends Agent {
         fsm.registerState(new WannaCross(), WANNA_CROSS);
 
         // Register state CROSSING
-        fsm.registerState(new NamePrinter(), CROSSING);
+        fsm.registerState(new Crossing(), CROSSING);
 
         fsm.registerDefaultTransition(BEGIN, PLAYING);
         fsm.registerTransition(PLAYING, PLAYING, 0);
@@ -41,6 +43,14 @@ public class ChildAgent extends Agent {
         fsm.registerDefaultTransition(CROSSING, PLAYING);
 
         addBehaviour(fsm);
+    }
+
+    private void change_side() {
+        if(this.side == "Right") {
+            this.side = "Left";
+        } else {
+            this.side = "Right";
+        }
     }
 
 }
