@@ -4,12 +4,13 @@ import jade.core.AID;
 import jade.lang.acl.ACLMessage;
 
 import child.NamePrinter;
+import child.ChildAgent;
 import utils.YellowPages;
 
 public class WannaCross extends NamePrinter {
 
-    public WannaCross() {
-        super();
+    public WannaCross(ChildAgent child) {
+        super(child);
         // System.out.println("Executing behaviour " + getBehaviourName());
     }
 

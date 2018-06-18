@@ -28,13 +28,13 @@ public class ChildAgent extends Agent {
         };
 
         // Register state PLAYING (first state)
-        fsm.registerFirstState(new RandomGenerator(2), PLAYING);
+        fsm.registerFirstState(new RandomGenerator(this, 2), PLAYING);
 
         // Register state WANNA_CROSS
-        fsm.registerState(new WannaCross(), WANNA_CROSS);
+        fsm.registerState(new WannaCross(this), WANNA_CROSS);
 
         // Register state CROSSING
-        fsm.registerState(new Crossing(), CROSSING);
+        fsm.registerState(new Crossing(this), CROSSING);
 
         fsm.registerDefaultTransition(BEGIN, PLAYING);
         fsm.registerTransition(PLAYING, PLAYING, 0);
@@ -45,11 +45,13 @@ public class ChildAgent extends Agent {
         addBehaviour(fsm);
     }
 
-    private void change_side() {
+    public void change_side() {
         if(this.side == "Right") {
             this.side = "Left";
+            System.out.println(getLocalName() + ": Left side");
         } else {
             this.side = "Right";
+            System.out.println(getLocalName() + ": Right side");
         }
     }
 

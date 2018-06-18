@@ -1,5 +1,6 @@
 package child;
 
+import child.ChildAgent;
 import child.NamePrinter;
 
 public class RandomGenerator extends NamePrinter {
@@ -7,8 +8,8 @@ public class RandomGenerator extends NamePrinter {
     private int maxExitValue;
     private int exitValue;
 
-    public RandomGenerator(int max) {
-        super();
+    public RandomGenerator(ChildAgent child, int max) {
+        super(child);
         maxExitValue = max;
     }
 

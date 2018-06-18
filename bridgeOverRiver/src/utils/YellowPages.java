@@ -29,11 +29,11 @@ public class YellowPages {
 
         try {
           DFAgentDescription[] result = DFService.search(agent, df_description);
-          System.out.println("    Found the following " + type  + " agents (" + result.length  + "):");
+          // System.out.println("    Found the following " + type  + " agents (" + result.length  + "):");
           AID aids[] = new AID[result.length];
           for (int i = 0; i < result.length; ++i) {
             aids[i] = result[i].getName();
-            System.out.println("        " + aids[i].getName());
+            // System.out.println("        " + aids[i].getName());
           }
 
           return aids;
