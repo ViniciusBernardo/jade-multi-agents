@@ -4,6 +4,7 @@ import jade.core.Agent;
 import jade.core.behaviours.FSMBehaviour;
 
 import child.RandomGenerator;
+import child.WannaCross;
 
 public class ChildAgent extends Agent {
 
@@ -28,7 +29,7 @@ public class ChildAgent extends Agent {
         fsm.registerFirstState(new RandomGenerator(2), PLAYING);
 
         // Register state WANNA_CROSS
-        fsm.registerState(new NamePrinter(), WANNA_CROSS);
+        fsm.registerState(new WannaCross(), WANNA_CROSS);
 
         // Register state CROSSING
         fsm.registerState(new NamePrinter(), CROSSING);
