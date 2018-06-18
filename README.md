@@ -18,4 +18,10 @@ Para executar o código, clone o repositório pelo comando `git clone https://gi
 
 Após isso, siga o tutorial de instalação do Jade disponibilizado em PDF's na pasta doc.
 
-Agora,
+Agora, no terminal:
+```
+cd bridgeOverRiver/src/
+cJade bridge/*.java
+cJade child/*.java
+rJade -agents "bridge:bridge.BridgeAgent;child:child.ChildAgent"
+```
