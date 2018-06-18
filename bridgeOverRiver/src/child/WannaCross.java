@@ -11,13 +11,9 @@ public class WannaCross extends NamePrinter {
 
     public WannaCross(ChildAgent child) {
         super(child);
-        // System.out.println("Executing behaviour " + getBehaviourName());
     }
 
     public void action() {
-
-        // System.out.println("Executing behaviour " + getBehaviourName());
-        // System.out.println("  Trying pass bridge");
 
          AID search_result[] = YellowPages.df_search(myAgent, "Bridge");
          AID bridge;

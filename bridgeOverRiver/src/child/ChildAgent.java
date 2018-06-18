@@ -21,7 +21,6 @@ public class ChildAgent extends Agent {
 
         FSMBehaviour fsm = new FSMBehaviour(this) {
             public int onEnd() {
-                // System.out.println("Child behaviour completed.");
                 myAgent.doDelete();
                 return super.onEnd();
             }
@@ -46,6 +45,7 @@ public class ChildAgent extends Agent {
     }
 
     public void change_side() {
+
         if(this.side == "Right") {
             this.side = "Left";
             System.out.println(getLocalName() + ": Left side");

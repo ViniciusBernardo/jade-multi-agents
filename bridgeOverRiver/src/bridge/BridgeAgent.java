@@ -2,8 +2,6 @@ package bridge;
 
 import jade.core.Agent;
 import jade.core.behaviours.*;
-// import jade.lang.acl.ACLMessage;
-// import jade.lang.acl.MessageTemplate;
 
 import utils.YellowPages;
 import bridge.CrossRequest;

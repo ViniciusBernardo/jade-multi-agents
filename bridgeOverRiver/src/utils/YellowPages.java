@@ -29,11 +29,9 @@ public class YellowPages {
 
         try {
           DFAgentDescription[] result = DFService.search(agent, df_description);
-          // System.out.println("    Found the following " + type  + " agents (" + result.length  + "):");
           AID aids[] = new AID[result.length];
           for (int i = 0; i < result.length; ++i) {
             aids[i] = result[i].getName();
-            // System.out.println("        " + aids[i].getName());
           }
 
           return aids;
@@ -47,7 +45,6 @@ public class YellowPages {
 
     public static void send_message(Agent agent, AID destiny, int type, String message) {
 
-        // System.out.println("Send Message");
         if(destiny != null) {
             ACLMessage envelope = new ACLMessage(type);
             envelope.addReceiver(destiny);
@@ -58,7 +55,6 @@ public class YellowPages {
 
     public static ACLMessage receive_message(Agent agent, int type) {
 
-        // System.out.println("Receive Message");
         MessageTemplate template = MessageTemplate.MatchPerformative(type);
         ACLMessage envelope = agent.receive(template);
 
@@ -67,7 +63,6 @@ public class YellowPages {
 
     public static void reply_message(Agent agent, int type, ACLMessage envelope, String message) {
 
-        // System.out.println("Reply Message");
         if(envelope != null) {
             ACLMessage reply = envelope.createReply();
             reply.setPerformative(type);

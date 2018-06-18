@@ -16,7 +16,9 @@ public class Crossing extends NamePrinter {
     public void action() {
 
         ACLMessage envelope = YellowPages.receive_message(myAgent, ACLMessage.INFORM);
+
         if(envelope != null) {
+
             if(envelope.getContent().contains("Yes")) {
                 System.out.println("CROSSING received: Yes");
                 YellowPages.reply_message(myAgent, ACLMessage.CONFIRM, envelope, "I crossed the bridge");
